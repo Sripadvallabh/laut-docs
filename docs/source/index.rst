@@ -1,22 +1,28 @@
-Welcome to Lumache's documentation!
-===================================
+==============================================
+Welcome to LAUT's documentation!
+==============================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+LAUT is a tool aimed at improving network automation.
+It can significantly improve UT & AUT workflow efficiency.
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+Getting Started
+===============
 
-.. note::
-
-   This project is under active development.
-
-Contents
---------
+.. include:: overview/summary.rst
 
 .. toctree::
+   :maxdepth: 1
+   :hidden:
 
-   usage
-   api
+   overview/index
+
+Commands
+========
+
+.. include:: commands/summary.rst
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   commands/index
