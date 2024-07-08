@@ -2,8 +2,9 @@
 Welcome to LAUT's documentation!
 ==============================================
 
-LAUT is a tool aimed at improving network automation.
-It can significantly improve UT & AUT workflow efficiency.
+LAUT is a tool used for network automation.
+
+.. image:: laut_goal.png
 
 Getting Started
 ===============
@@ -23,6 +24,17 @@ Commands
 
 .. toctree::
    :maxdepth: 2
-   :hidden:
 
    commands/index
+
+Features
+========
+
+.. include:: features/summary.rst
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   features/index
+
