@@ -1,3 +1,6 @@
+
+.. _execute:
+
 execute
 =======
 
@@ -37,6 +40,11 @@ An example of ``execute show ip route`` on device 'l2switch':
    Add INCLUDE section (y/n): n
    Add EXCLUDE section (y/n): n
    Add SAVE section (y/n): n
+   (lӓut-l2switch)
+   (lӓut-l2switch) list 1
+               - execute:
+                   device: l2switch
+                   command: ['show ip route']
    (lӓut-l2switch)
 
 The output from the command execution will be printed on the terminal screen along
