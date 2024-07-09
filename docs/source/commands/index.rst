@@ -7,6 +7,7 @@ LAUT commands are classified into 7 groups based on their function:
 
 .. toctree::
    :maxdepth: 3
+   :includehidden:
 
    management/index
    operators/index

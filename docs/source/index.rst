@@ -23,7 +23,8 @@ Commands
 .. include:: commands/summary.rst
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
+   :includehidden:
 
    commands/index
 
