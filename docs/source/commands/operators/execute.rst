@@ -53,7 +53,7 @@ with a prompt requesting the user to input INCLUDE, EXCLUDE, SAVE sections.
 **INCLUDE**
 
 This section is used to verify if something 'is' present in the output of an ``execute`` command.
-All inputs to this section is considered to be regex patterns.
+Any input verification to this section should be a regex pattern.
 
 For example, in the above ``execute show ip route``, to verify if 100.100.100.100 appears as
 a directly connected route via Loopback30 one could input the following regex pattern:
@@ -177,8 +177,8 @@ the error message disappears:
 Behaves in the same way as an INCLUDE section, except that it checks if a particular
 regex pattern DOES NOT match the ``execute`` output.
 
-Continuing with the previous example, if we *shut* the interface GigabitEthernet1/0/16
-it is expected that the route 5.5.5.5 is expected to not show up in 'show ip route' command.
+Continuing with the previous example, if we *shut* the interface 'GigabitEthernet1/0/16'
+it is expected that the route '5.5.5.5' is expected to not show up in 'show ip route' command.
 In this particular case, we should input the regex pattern that matches 5.5.5.5 route in the
 EXCLUDE section so as to assure that after the interface has been *shut* we shouldn't expect
 the route to be present in the routing table:
@@ -260,5 +260,3 @@ EXCLUDE section also accepts multiple regex patterns in the same way as INCLUDE 
    Read only after going through 'Variables & Parameters' in LAUT features section first.
 
 YET TO BE ADDED
-
-LAUT STILL DOES NOT SUPPORT VARIABLES IN ITS RUN_GENIE_SDK IMPLEMENTATION.
