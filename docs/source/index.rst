@@ -24,7 +24,7 @@ Commands
 
 .. toctree::
    :maxdepth: 4
-   :includehidden:
+   :hidden:
 
    commands/index
 
