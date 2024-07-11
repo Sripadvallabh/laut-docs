@@ -30,3 +30,7 @@ html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 pygments_style = 'sphinx'
+
+# -- Options for EPUB output
+latex_engine = "xelatex"
+epub_show_urls = 'footnote'
