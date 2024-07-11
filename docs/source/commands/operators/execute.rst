@@ -1,6 +1,3 @@
-
-.. _execute:
-
 execute
 =======
 

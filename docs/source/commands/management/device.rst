@@ -1,6 +1,3 @@
-
-.. _device:
-
 device
 ======
 

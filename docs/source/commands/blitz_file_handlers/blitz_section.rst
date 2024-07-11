@@ -1,6 +1,3 @@
-
-.. _blitz_section:
-
 blitz_section
 =============
 
