@@ -9,8 +9,6 @@ LAUT is a tool used for network automation.
 Introduction
 ===============
 
-.. include:: overview/summary.rst
-
 .. toctree::
    :maxdepth: 1
    :hidden:
@@ -20,18 +18,15 @@ Introduction
 Shell commands
 ==============
 
-.. include:: commands/summary.rst
-
 .. toctree::
    :maxdepth: 4
+   :includehidden:
    :hidden:
 
    commands/index
 
 Shell Features
 ==============
-
-.. include:: features/summary.rst
 
 .. toctree::
    :maxdepth: 1
