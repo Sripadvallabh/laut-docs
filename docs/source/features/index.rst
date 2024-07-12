@@ -1,4 +1,4 @@
 Features
 ===============
 
-Yet to be added
+.. include:: summary.rst
