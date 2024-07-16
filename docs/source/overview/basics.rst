@@ -36,10 +36,6 @@ Following is a sample YAML that provides information about 2 IOS-XE devices:
           defaults:
             class: unicon.Unicon
             via: cli
-        credentials:
-          default:
-            username: admin
-            password: lab
       l2switch:
         os: iosxe
         type: iosxe
@@ -52,10 +48,6 @@ Following is a sample YAML that provides information about 2 IOS-XE devices:
           defaults:
             class: unicon.Unicon
             via: cli
-        credentials:
-          default:
-            username: admin
-            password: lab
 
 To provide this information to LAUT, use the ``testbed`` command with
 relative filepath to the testbed YAML as argument. Once a testbed YAML is provided
