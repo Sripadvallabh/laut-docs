@@ -27,10 +27,6 @@ For example, given 2 IOS-XE devices in a testbed YAML as follows:
           defaults:
             class: unicon.Unicon
             via: cli
-        credentials:
-          default:
-            username: admin
-            password: lab
       l2switch:
         os: iosxe
         type: iosxe
@@ -43,10 +39,6 @@ For example, given 2 IOS-XE devices in a testbed YAML as follows:
           defaults:
             class: unicon.Unicon
             via: cli
-        credentials:
-          default:
-            username: admin
-            password: lab
 
 The application of ``testbed`` command to the above testbed YAML would look like this:
 
