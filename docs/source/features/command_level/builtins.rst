@@ -1,5 +1,5 @@
-Builtin commands
-================
+Builtins
+=========
 
 These commands work at the shell & OS level to enhance LAUT's working experience.
 Mastering them can considerably improve workflow efficiency. All of these commands
@@ -195,6 +195,8 @@ Modify & view LAUT settings.
 shell
 ------
 Execute a command as if at the OS prompt.
+
+.. _shortcuts:
 
 shortcuts
 ----------

@@ -1,5 +1,5 @@
-Shell features
-==============
+Basic Shell features
+====================
 
 Autocomplete
 ------------

@@ -12,13 +12,13 @@ To know which device is currently loaded & active with respect to the
 shell, LAUT shell prompt will always reflect the device currently *active*
 in the shell in the format ``(lӓut-<ACTIVE_DEVICE_HOSTNAME>)``.
 
-For example, switch from device 'leaf2-lag2' to 'l2switch' by giving the command
-``device l2switch`` & notice that the prompt would change to *'(lӓut-l2switch)'*:
+For example, switch from device 'host1' to 'host2' by giving the command
+``device host2`` & notice that the prompt would change to *'(lӓut-host2)'*:
 
 .. code-block:: console
 
-    (lӓut-leaf2-lag2) device l2switch
-    (lӓut-l2switch)
+   (lӓut-host1) device host2
+   (lӓut-host2)
 
 .. note::
 

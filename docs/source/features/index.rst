@@ -3,25 +3,24 @@ Features
 
 .. include:: summary.rst
 
-They are mainly focused across 3 different domains:
+All LAUT features are grouped across 3 different domains:
 
-   * Blitz level
-      * :doc:`jinja` - Jinja support in LAUT
-      * :doc:`varparam` - Variables & parameters in LAUT
-      * :doc:`loop` - Looping in LAUT
    * Shell level
-      * :doc:`shell_features` - Features inbuilt into LAUT shell
+      * :doc:`shell_level/basic_shell_features` - Basic features inbuilt into LAUT shell
+      * :doc:`shell_level/adv_shell_features` - Advanced LAUT shell features
    * Command level
-      * :doc:`builtin_commands` - Commands leveraging basic capabilities any shell should have
-      * :doc:`other_tools` - Additional LAUT tools
+      * :doc:`command_level/builtins` - Commands leveraging basic capabilities any shell should have
+      * :doc:`command_level/other_tools` - Additional LAUT tools as commands
+   * Blitz level
+      * :doc:`blitz_level/jinja` - Jinja2 support
+      * :doc:`blitz_level/parameters` - LAUT parameters mirroring blitz parameter markups
+      * :doc:`blitz_level/variables` - LAUT variables mirroring blitz variables
+      * :doc:`blitz_level/loop` - Looping support
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :hidden:
 
-   builtin_commands
-   jinja
-   loop
-   other_tools
-   shell_features
-   varparam
+   shell_level/index
+   command_level/index
+   blitz_level/index
