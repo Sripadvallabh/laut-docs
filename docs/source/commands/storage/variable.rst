@@ -1,4 +1,0 @@
-variable
-========
-
-YET TO BE IMPLEMENTED. SKIP THIS SECTION

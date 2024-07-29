@@ -1,6 +1,3 @@
-
-.. _install:
-
 Installation Instructions
 =========================
 

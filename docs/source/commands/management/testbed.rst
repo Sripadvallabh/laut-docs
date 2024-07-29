@@ -14,108 +14,107 @@ For example, given 2 IOS-XE devices in a testbed YAML as follows:
 
 .. code-block:: yaml
 
-    devices:
-      leaf2-lag2:
-        os: iosxe
-        type: iosxe
-        connections:
-          cli:
-            class: unicon.Unicon
-            ip: 10.78.238.163
-            port: 22
-            protocol: ssh
-          defaults:
-            class: unicon.Unicon
-            via: cli
-      l2switch:
-        os: iosxe
-        type: iosxe
-        connections:
-          cli:
-            class: unicon.Unicon
-            ip: 10.78.238.164
-            port: 22
-            protocol: ssh
-          defaults:
-            class: unicon.Unicon
-            via: cli
+   devices:
+     host1:
+       os: iosxe
+       type: iosxe
+       platform: iol
+       connections:
+         a:
+           ip: 127.0.0.1
+           port: 33331
+           protocol: telnet
+         defaults:
+           class: unicon.Unicon
+           via: cli
+     host2:
+       os: iosxe
+       type: iosxe
+       platform: iol
+       connections:
+         a:
+           ip: 127.0.0.1
+           port: 33332
+           protocol: telnet
+         defaults:
+           class: unicon.Unicon
+           via: cli
 
 The application of ``testbed`` command to the above testbed YAML would look like this:
 
 .. code-block:: console
 
-    (lӓut-TB-NONE) testbed pyats/testbed.yaml
-    2024-07-06 16:54:29: %LAUT-INFO: +------------------------------------------------------------------------------+
-    2024-07-06 16:54:29: %LAUT-INFO: :                     Loading testbed 'pyats/testbed.yaml'                     :
-    2024-07-06 16:54:29: %LAUT-INFO: +------------------------------------------------------------------------------+
-    2024-07-06 16:54:29: %LAUT-INFO: +..............................................................................+
-    2024-07-06 16:54:29: %LAUT-INFO: :                  Connecting to all devices in given testbed                  :
-    2024-07-06 16:54:29: %LAUT-INFO: +..............................................................................+
-    2024-07-06 16:54:29: %LAUT-INFO: +..............................................................................+
-    2024-07-06 16:54:29: %LAUT-INFO: :                      Connecting to device 'leaf2-lag2'                       :
-    2024-07-06 16:54:29: %LAUT-INFO: +..............................................................................+
-
-    2024-07-06 16:54:29,189: %UNICON-INFO: +++ leaf2-lag2 logfile /tmp/leaf2-lag2-cli-20240706T165429189.log +++
-
-    2024-07-06 16:54:29,190: %UNICON-INFO: +++ Unicon plugin iosxe (unicon.internal.plugins.iosxe) +++
-    Warning: Permanently added '10.78.238.163' (RSA) to the list of known hosts.
-
-
-    2024-07-06 16:54:29,523: %UNICON-INFO: +++ connection to spawn: ssh -l admin 10.78.238.163 -p 22 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null, id: 139867410961648 +++
-
-    2024-07-06 16:54:29,524: %UNICON-INFO: connection to leaf2-lag2
-    Password:
-
-
-
-    leaf2-lag2#
-
-    leaf2-lag2#
-
-    2024-07-06 16:54:34,135: %UNICON-INFO: +++ leaf2-lag2 with via 'cli': executing command 'show version | include operating mode' +++
-    show version | include operating mode
-    leaf2-lag2#
-
-    2024-07-06 16:54:34,336: %UNICON-INFO: +++ initializing handle +++
-
-    2024-07-06 16:54:34,459: %UNICON-INFO: +++ leaf2-lag2 with via 'cli': executing command 'term length 0' +++
-    term length 0
-    leaf2-lag2#
-    2024-07-06 16:54:34: %LAUT-INFO: +..............................................................................+
-    2024-07-06 16:54:34: %LAUT-INFO: :                       Connecting to device 'l2switch'                        :
-    2024-07-06 16:54:34: %LAUT-INFO: +..............................................................................+
-
-    2024-07-06 16:54:34,744: %UNICON-INFO: +++ l2switch logfile /tmp/l2switch-cli-20240706T165434743.log +++
-
-    2024-07-06 16:54:34,744: %UNICON-INFO: +++ Unicon plugin iosxe (unicon.internal.plugins.iosxe) +++
-    Warning: Permanently added '10.78.238.164' (RSA) to the list of known hosts.
-
-
-    2024-07-06 16:54:35,083: %UNICON-INFO: +++ connection to spawn: ssh -l admin 10.78.238.164 -p 22 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null, id: 139867411030752 +++
-
-    2024-07-06 16:54:35,083: %UNICON-INFO: connection to l2switch
-    Password:
-
-
-
-    l2switch#
-
-    l2switch#
-
-    2024-07-06 16:54:39,631: %UNICON-INFO: +++ l2switch with via 'cli': executing command 'show version | include operating mode' +++
-    show version | include operating mode
-    l2switch#
-
-    2024-07-06 16:54:39,821: %UNICON-INFO: +++ initializing handle +++
-
-    2024-07-06 16:54:39,944: %UNICON-INFO: +++ l2switch with via 'cli': executing command 'term length 0' +++
-    term length 0
-    l2switch#
-    2024-07-06 16:54:40: %LAUT-INFO: +------------------------------------------------------------------------------+
-    2024-07-06 16:54:40: %LAUT-INFO: :                           Testbed load successful                            :
-    2024-07-06 16:54:40: %LAUT-INFO: +------------------------------------------------------------------------------+
-    (lӓut-leaf2-lag2)
-
+   (lӓut-TB-NONE) testbed pyats/testbed.yaml
+   2024-07-26 14:04:30: %LAUT-INFO: +------------------------------------------------------------------------------+
+   2024-07-26 14:04:30: %LAUT-INFO: :                     Loading testbed 'pyats/testbed.yaml'                     :
+   2024-07-26 14:04:30: %LAUT-INFO: +------------------------------------------------------------------------------+
+   2024-07-26 14:04:35: %LAUT-INFO: +..............................................................................+
+   2024-07-26 14:04:35: %LAUT-INFO: :                  Connecting to all devices in given testbed                  :
+   2024-07-26 14:04:35: %LAUT-INFO: +..............................................................................+
+   2024-07-26 14:04:35: %LAUT-INFO: +..............................................................................+
+   2024-07-26 14:04:35: %LAUT-INFO: :                         Connecting to device 'host1'                         :
+   2024-07-26 14:04:35: %LAUT-INFO: +..............................................................................+
+   
+   2024-07-26 14:04:35,131: %UNICON-INFO: +++ host1 logfile /tmp/host1-cli-20240726T140435130.log +++
+   
+   2024-07-26 14:04:35,131: %UNICON-INFO: +++ Unicon plugin iosxe (unicon.internal.plugins.iosxe) +++
+   /nobackup/araradha/pyats/lib/python3.8/site-packages/unicon/bases/routers/connection.py:97: DeprecationWarning: Arguments 'username', 'enable_password','tacacs_password' and 'line_password' are now deprecated and replaced by 'credentials'.
+     warnings.warn(message = "Arguments 'username', "
+   Trying 127.0.0.1...
+   Connected to 127.0.0.1.
+   Escape character is '^]'.
+   
+   
+   2024-07-26 14:04:35,176: %UNICON-INFO: +++ connection to spawn: telnet 127.0.0.1 33331, id: 140026962501840 +++
+   
+   2024-07-26 14:04:35,176: %UNICON-INFO: connection to host1
+   
+   host1#
+   
+   host1#
+   
+   2024-07-26 14:04:36,360: %UNICON-INFO: +++ host1 with via 'a': executing command 'show version | include operating mode' +++
+   show version | include operating mode
+   host1#
+   
+   2024-07-26 14:04:36,540: %UNICON-INFO: +++ initializing handle +++
+   
+   2024-07-26 14:04:36,692: %UNICON-INFO: +++ host1 with via 'a': executing command 'term length 0' +++
+   term length 0
+   host1#
+   2024-07-26 14:04:36: %LAUT-INFO: +..............................................................................+
+   2024-07-26 14:04:36: %LAUT-INFO: :                         Connecting to device 'host2'                         :
+   2024-07-26 14:04:36: %LAUT-INFO: +..............................................................................+
+   
+   2024-07-26 14:04:36,999: %UNICON-INFO: +++ host2 logfile /tmp/host2-cli-20240726T140436997.log +++
+   
+   2024-07-26 14:04:36,999: %UNICON-INFO: +++ Unicon plugin iosxe (unicon.internal.plugins.iosxe) +++
+   Trying 127.0.0.1...
+   Connected to 127.0.0.1.
+   Escape character is '^]'.
+   
+   
+   2024-07-26 14:04:37,058: %UNICON-INFO: +++ connection to spawn: telnet 127.0.0.1 33332, id: 140026959604368 +++
+   
+   2024-07-26 14:04:37,058: %UNICON-INFO: connection to host2
+   
+   host2#
+   
+   host2#
+   
+   2024-07-26 14:04:38,122: %UNICON-INFO: +++ host2 with via 'a': executing command 'show version | include operating mode' +++
+   show version | include operating mode
+   host2#
+   
+   2024-07-26 14:04:38,269: %UNICON-INFO: +++ initializing handle +++
+   
+   2024-07-26 14:04:38,445: %UNICON-INFO: +++ host2 with via 'a': executing command 'term length 0' +++
+   term length 0
+   host2#
+   2024-07-26 14:04:38: %LAUT-INFO: +------------------------------------------------------------------------------+
+   2024-07-26 14:04:38: %LAUT-INFO: :                           Testbed load successful                            :
+   2024-07-26 14:04:38: %LAUT-INFO: +------------------------------------------------------------------------------+
+   (lӓut-host1)
 
 For more information on testbed YAML, refer the detailed explanation of a pyATS testbed
 YAML schema `here <https://pubhub.devnetcloud.com/media/pyats/docs/topology/schema.html#production-yaml-schema>`_
