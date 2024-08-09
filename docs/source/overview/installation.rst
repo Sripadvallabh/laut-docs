@@ -1,20 +1,23 @@
 Installation Instructions
 =========================
 
-LAUT is available as binary at ``/ws/araradha-bgl/laut``.
-There are no dependencies; even python environment is not required.
+Step 1: Pull live-aut repository
 
-Start LAUT by executing the LAUT binary file::
+.. code-block:: console
 
-   $ /ws/araradha-bgl/laut
+   git clone git@polaris-git.cisco.com:bashish/live-aut.git
 
-   🎃 LAUT shell started
+Step 2: Source pyats environment
 
-   (lӓut-TB-NONE)
+Step 3: Install dependencies via pip in pyats env
 
-Once the prompt ``(lӓut-`` appears, LAUT has started successfully.
+.. code-block:: console
 
-.. note::
+   pip install cmd2 ruamel.yaml pathlib colorama datetime jinja2 gnureadline
 
-   You can copy the LAUT binary to a directory on 'PATH' or have a symlink to the workspace path to
-   directly start LAUT by issuing the command *laut*
+Step 4: Start LAUT
+
+.. code-block:: console
+
+   cd live-aut
+   python3 laut.py
