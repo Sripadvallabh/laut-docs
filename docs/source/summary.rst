@@ -1,24 +1,23 @@
-Overview
----------
-
-LAUT shell is a high level abstraction interface to interact with network devices for
-everyday developers who spend hours working on them to acheive certain objectives.
-The usefulness of this abstraction allows users to work on a different dimension analogous
-to a high level programming language versus assembly level code.
+LAUT shell is a tool used for network automation at small scale with device console workflows.
+LAUT provides a higher level abstraction interface to interact with these network devices enabling
+users to work on a network as if programming a high level language.
 
 Architecture
 ----------------
 
-LAUT leverage pyATS in part because it is OS independent and provide useful abstractions to the
-common device functions such as configuration, command execution etc. but also because it presents us
-with useful parsers & apis via its genie SDK.
+.. image:: architecture.png
 
-LAUT shell primarily works with pyATS blitz YAML to keep track of history and the operations
-performed by the users on the network. Blitz YAML files are one of the easiest & cleanest ways
-of recording the various operations and handle them at large scale.
+Automation script helper
+------------------------
 
-High level device operations
-----------------------------
+It is essential to cover code with automated test cases to prevent it from falling into legacy.
+LAUT helps developers write AUT scripts, autogenerating pyATS blitz snippets which are readable,
+error-free, easy to understand and modify.
+
+.. image:: automation.png
+
+Higher level network abstractions
+------------------------------------
 
 Since LAUT is an abstraction interface, it can consider the devices as well as the various
 commands it provides to be mere virtualities of what can happen physically. This is particularly
@@ -31,15 +30,4 @@ of functions in high level programming languages. These YAML files can handle an
 a set of configuration that can vary based on parameters to intense verifications on
 show command outputs.
 
-LAUT can autogenerate AUT script at UT time
--------------------------------------------
-
-It is essential to cover code with automated test cases to prevent it from falling into legacy.
-Hence, it is utmost important to have AUT for each and every set of feature available. In
-order to efficiently write AUT scripts for developers, LAUT does play a huge role in
-autogenerating pyATS blitz scripts which are readable, easy to understand and modify when
-changes to the test cases occur.
-
-LAUT tries its best to provide an interface that mimcs the device console but at the same time
-could try to autogenerate AUT scripts that need not be verified making the whole
-process of UT and AUT look efficient and clean.
+.. image:: enhancement.png

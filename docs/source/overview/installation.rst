@@ -16,4 +16,5 @@ Once the prompt ``(lӓut-`` appears, LAUT has started successfully.
 
 .. note::
 
-   You can copy the LAUT binary to a directory on PATH to start LAUT by issuing the command *laut*
+   You can copy the LAUT binary to a directory on 'PATH' or have a symlink to the workspace path to
+   directly start LAUT by issuing the command *laut*
