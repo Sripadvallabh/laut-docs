@@ -309,3 +309,68 @@ of the '1.1.1.1' route regex pattern as an *'exclude'* entry:
    (lӓut-host2)
 
 One can also input multiple *exclude* entries in the same way as multiple *include* entries.
+
+LAUT exec mode
+--------------
+
+There is a mode in LAUT which behaves in a similar way akin to an exec prompt at the device console.
+To get into this mode just invoke ``execute`` without any arguments:
+
+.. code-block:: console
+
+   (lӓut-leaf2) execute
+   (leaf2:exec)> show ip route
+   
+   2024-08-06 20:44:28,066: %UNICON-INFO: +++ leaf2 with via 'a': executing command 'show ip route' +++
+   show ip route
+   Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+          D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+          N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+          E1 - OSPF external type 1, E2 - OSPF external type 2, m - OMP
+          n - NAT, Ni - NAT inside, No - NAT outside, Nd - NAT DIA
+          i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+          ia - IS-IS inter area, * - candidate default, U - per-user static route
+          H - NHRP, G - NHRP registered, g - NHRP registration summary
+          o - ODR, P - periodic downloaded static route, l - LISP
+          a - application route
+          + - replicated route, % - next hop override, p - overrides from PfR
+          & - replicated local route overrides by connected
+   
+   Gateway of last resort is not set
+   
+         1.0.0.0/32 is subnetted, 1 subnets
+   O        1.1.1.1 [110/3] via 20.1.1.1, 04:45:25, GigabitEthernet1/0/1
+         2.0.0.0/32 is subnetted, 1 subnets
+   C        2.2.2.2 is directly connected, Loopback0
+         4.0.0.0/32 is subnetted, 1 subnets
+   O        4.4.4.4 [110/2] via 20.1.1.1, 3d04h, GigabitEthernet1/0/1
+         10.0.0.0/24 is subnetted, 1 subnets
+   O        10.10.10.0 [110/2] via 20.1.1.1, 3d04h, GigabitEthernet1/0/1
+         20.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+   C        20.1.1.0/24 is directly connected, GigabitEthernet1/0/1
+   L        20.1.1.2/32 is directly connected, GigabitEthernet1/0/1
+   leaf2#
+
+The prompt for this mode is '(<DEVICE_NAME>:exec)' & users can execute any command as if at the
+device exec prompt. Give 'end' to exit this mode.
+
+.. code-block:: console
+
+   (leaf2:exec)> 
+   (leaf2:exec)> exit
+   (lӓut-leaf2)
+
+Once exited, LAUT autogenerates *'execute'* blitz action snippet with all the exec commands in the LAUT exec
+mode as shown below for the earlier example:
+
+.. code-block:: console
+
+   (lӓut-leaf2) list 1
+   execute:
+     device: leaf2
+     command: show ip route
+   (lӓut-leaf2)
+
+This mode can be particularly used to have certain exec commands invoked without any *include* or *exclude*
+entries associated with them as normally LAUT does not autogenerate blitz action snippet for simply
+executing an exec command.

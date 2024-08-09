@@ -197,8 +197,7 @@ To execute any command on a device, switch to that device using ``device`` comma
 & then run the ``execute`` command.
 
 There is a shortcut to execute 'show' commands by just invoking ``show`` instead 
-of ``execute show``(LAUT internally will remap the ``show`` to ``execute show`` via
-the shortcuts feature).
+of ``execute show``.
 
 In the example below, 'show ip route' was executed on the device 'host2':
 

@@ -2,8 +2,6 @@
 Welcome to LAUT's documentation!
 ==============================================
 
-LAUT is a tool used for network automation.
-
 .. include:: summary.rst
 
 .. toctree::
@@ -12,5 +10,5 @@ LAUT is a tool used for network automation.
 
    overview/index
    commands/index
+   laut_shell/index
    features/index
-

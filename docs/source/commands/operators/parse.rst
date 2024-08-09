@@ -230,7 +230,6 @@ represents the actual data from the parsed output dictionary that we would like 
 If the reconstructed dict is equal to an empty dict({}), it would mean that the query does not 
 match the given parse dictionary.
 
-
 **Dq query shorthand**
 
 LAUT has a shorthand syntax for typing these Dq queries which in turn re-convert back to a Dq query.
@@ -365,6 +364,42 @@ The corresponding ``parse`` command output with the *include* entries in the for
 Notice from ``list 1`` output that the Dq queries in blitz *'include'* are exactly the same
 as the Dq queries we intended to generate from the Dq shorthand syntax. Hence, it is always recommended
 to use the Dq shorthand instead of plain Dq.
+
+If a given element in Dq shorthand syntax does not match any key in the output dictionary, LAUT
+adds the element in the query with an optional argument 'regex=True', with its pattern being ".*{element}.*".
+Following example shows the regex optional argument set in the query if the element '1.1.1.1/32' in the query
+from earlier is given instead as '1.1.1.1':
+
+.. code-block:: console
+
+   2024-08-07 12:31:02: %LAUT-INFO: +..............................................................................+
+   2024-08-07 12:31:02: %LAUT-INFO: :                                   INCLUDE                                    :
+   2024-08-07 12:31:02: %LAUT-INFO: +..............................................................................+
+   𝟏 'vrf':
+     𝟐 'default':
+       𝟑 'address_family':
+         𝟒 'ipv4':
+           𝟓 'routes':
+             𝟔 '1.1.1.1/32':
+               𝟕 'route': '1.1.1.1/32'
+               𝟖 'active': True
+               𝟗 'source_protocol_codes': 'C'
+               𝟏𝟎 'source_protocol': 'connected'
+               𝟏𝟏 'next_hop':
+                 𝟏𝟐 'outgoing_interface':
+                   𝟏𝟑 'Loopback0':
+                     𝟏𝟒 'outgoing_interface': 'Loopback0'
+   Enter Dq query (or) line numbers (Press enter for multiple entries): 1.1.1.1,outgoing_interface=Loopback0
+   {'vrf': {'default': {'address_family': {'ipv4': {'routes': {'1.1.1.1/32': {'next_hop': {'outgoing_interface': {'Loopback0': {'outgoing_interface': 'Loopback0'}}}}}}}}}}
+   Do you wish to add this Dq query (y/n): y
+   (lӓut-host1) list 1
+   parse:
+     device: host1
+     command: show ip route
+     include:
+       - contains('.*1.1.1.1.*', regex=True).contains_key_value('outgoing_interface',
+         'Loopback0')
+   (lӓut-host1)
 
 **Line numbers**
 
